@@ -15,6 +15,16 @@ public class Character {
         }
     }
 
+    public void heal(int healingAmount) {
+        if (alive) {
+            health += healingAmount;
+            if (health > 1000) {
+                health = 1000;               
+            }
+
+        }
+    }
+
     public int getHealth() {
         return health;
     }
