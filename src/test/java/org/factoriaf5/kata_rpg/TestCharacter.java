@@ -36,6 +36,16 @@ public class TestCharacter {
         assertThat(character.isAlive(), is(false));
     }
 
+    @Test
+    void testCharacterDeadCannotTakeDamage(){
+        Character character = new Character();
+        character.dealDamage(1000);
+        character.dealDamage(150);
+        assertThat(character.getHealth(), is(0));
+        assertThat(character.isAlive(), is (false));
+
+    }
+
     @Test 
     void testDiesAfterCriticalHit() {
         Character character = new Character();
