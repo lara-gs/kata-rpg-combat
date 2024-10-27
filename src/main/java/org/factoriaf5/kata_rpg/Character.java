@@ -8,7 +8,7 @@ public class Character {
     public void dealDamage(int damage) {
         if (alive) {
             health -= damage;
-            if (health >=0) {
+            if (health <=0) {
                 alive = false;
                 health = 0;
             }
@@ -18,7 +18,7 @@ public class Character {
     public int getHealth() {
         return health;
     }
-    
+
     public boolean isAlive() {
         return alive;
     }
