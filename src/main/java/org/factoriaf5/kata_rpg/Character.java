@@ -7,19 +7,22 @@ public class Character {
 
     public void dealDamage(Character target, int damage) {
         if (this != target && target.isAlive()) {
-            if (target.level >= this.level + 5)
+            if (target.level >= this.level + 5) {
                 damage /= 2;
-        } else if (this.level >= target.level + 5) {
-            damage *= 1.5;
-        }
-        health -= damage;
-        if (target.health <= 0) {
-            target.alive = false;
-            health = 0;
-        }
-    }
+            } else if (this.level >= target.level + 5) {
+                damage *= 1.5; 
+            }
+    
 
+            target.health -= damage;
+    
+            if (target.health <= 0) {
+                target.alive = false;
+                target.health = 0; 
+            }
+        }
     }
+    
 
     public void heal(Character target, int healingAmount) {
         if (this == target && target.isAlive()) {

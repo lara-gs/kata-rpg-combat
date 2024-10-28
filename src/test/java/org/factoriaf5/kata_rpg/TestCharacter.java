@@ -11,12 +11,14 @@ public class TestCharacter {
     Character character = new Character();
     assertThat(character.isAlive(), is(true));
 }
-    @Test
-    void testDealDamageReducesHealth() {
-        Character character = new Character();
-        character.dealDamage(200);
-        assertThat(character.getHealth(), is(800));
-    }
+@Test
+void testDealDamageReducesHealth() {
+    Character attacker = new Character(); 
+    Character target = new Character();    
+    attacker.dealDamage(target, 200);     
+    assertThat(target.getHealth(), is(800)); 
+}
+
 
     @Test
     void testHealthMax() {
