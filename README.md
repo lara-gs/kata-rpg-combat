@@ -52,12 +52,6 @@ All Characters, when created, have:
 ### Range Requirement:
 - Characters must be **in range** to deal damage to a target.
 
----
-
-## Retrospective:
-- Are you keeping up with the requirements? Has any iteration been a big challenge?
-- Do you feel good about your design? Is it scalable and easily adapted to new requirements?
-- Is everything tested? Are you confident in your code?
 
 ---
 
