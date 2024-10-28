@@ -5,21 +5,27 @@ public class Character {
     private int level = 1;
     private boolean alive = true;
 
-    public void dealDamage(int damage) {
-        if (alive) {
-            health -= damage;
-            if (health <=0) {
-                alive = false;
-                health = 0;
-            }
+    public void dealDamage(Character target, int damage) {
+        if (this != target && target.isAlive()) {
+            if (target.level >= this.level + 5)
+                damage /= 2;
+        } else if (this.level >= target.level + 5) {
+            damage *= 1.5;
+        }
+        health -= damage;
+        if (target.health <= 0) {
+            target.alive = false;
+            health = 0;
         }
     }
 
-    public void heal(int healingAmount) {
-        if (alive) {
-            health += healingAmount;
-            if (health > 1000) {
-                health = 1000;               
+    }
+
+    public void heal(Character target, int healingAmount) {
+        if (this == target && target.isAlive()) {
+            target.health += healingAmount;
+            if (target.health > 1000) {
+                target.health = 1000;
             }
 
         }
@@ -32,6 +38,5 @@ public class Character {
     public boolean isAlive() {
         return alive;
     }
-    
 
 }
